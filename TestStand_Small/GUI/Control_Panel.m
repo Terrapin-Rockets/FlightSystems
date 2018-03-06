@@ -52,6 +52,10 @@ function Control_Panel_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to Control_Panel (see VARARGIN)
 
+% teensy = serial('COM4');
+% fopen(teensy);
+% handles.teensy = teensy;
+
 % Choose default command line output for Control_Panel
 handles.output = hObject;
 
@@ -79,9 +83,26 @@ function Start_button_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+% Check checkbox
+% Check connection to teensy
+% Open solenoid valves
+% Check pressure on other side of valve, close if not good
+% Start logging data
+
+confirm_start = handles.Start_radio;
+if(confirm_start.Value == 1)
+    teensy = handles.teensy;
+    
+    
+    
+end
+
 
 % --- Executes on button press in Abort.
 function Abort_Callback(hObject, eventdata, handles)
 % hObject    handle to Abort (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+% Close solenoid valve
+% Stop logging
