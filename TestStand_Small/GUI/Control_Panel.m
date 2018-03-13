@@ -52,9 +52,9 @@ function Control_Panel_OpeningFcn(hObject, eventdata, handles, varargin)
 % handles    structure with handles and user data (see GUIDATA)
 % varargin   command line arguments to Control_Panel (see VARARGIN)
 
-% teensy = serial('COM4');
-% fopen(teensy);
-% handles.teensy = teensy;
+teensy = serial('COM4');
+fopen(teensy);
+handles.teensy = teensy;
 
 % Choose default command line output for Control_Panel
 handles.output = hObject;
